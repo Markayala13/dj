@@ -16,7 +16,7 @@ export function Marquee() {
   );
 
   return (
-    <div className="flex overflow-hidden bg-[#ffc10a] py-4">
+    <div className="flex overflow-hidden bg-[#BFEC34] py-4">
       {group}
       {group}
     </div>

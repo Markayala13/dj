@@ -13,10 +13,12 @@ import {
   OFRECEMOS_B,
   EXPLORA_CARDS,
   REVIEWS,
-  QUOTE_HREF,
+  CTA_HREF,
   SERVICES_HREF,
   EVENTS_HREF,
   CTA_PRIMARY,
+  PHONE_DISPLAY,
+  PHONE_HREF,
 } from "@/components/sites/dna/data";
 
 export default function Home() {
@@ -30,7 +32,7 @@ export default function Home() {
         <Container className="flex flex-wrap gap-x-10 gap-y-4 py-5">
           {STATS.map((s) => (
             <div key={s.label} className="flex items-baseline gap-2">
-              <span className="text-sm font-extrabold text-[#ffc10a]">{s.value}</span>
+              <span className="text-sm font-extrabold text-[#BFEC34]">{s.value}</span>
               <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/80">
                 {s.label}
               </span>
@@ -58,7 +60,7 @@ export default function Home() {
               <span className="dna-mark">Nosotros nos encargamos.</span>
             </p>
             <div className="mt-9">
-              <PillButton href={QUOTE_HREF} variant="dark" withArrow>
+              <PillButton href={CTA_HREF} variant="dark" withArrow external>
                 {CTA_PRIMARY}
               </PillButton>
             </div>
@@ -83,17 +85,61 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Conoce a DJ Chuy */}
+      <section className="bg-white pb-24 md:pb-32">
+        <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="order-2 overflow-hidden rounded-2xl lg:order-1">
+            <Image
+              src="/sites/dna/djchuy-portrait.jpg"
+              alt="DJ Chuy"
+              width={896}
+              height={1200}
+              sizes="(max-width: 1024px) 100vw, 560px"
+              className="h-auto w-full object-cover"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <Eyebrow>Tu DJ</Eyebrow>
+            <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
+              Conoce a <span className="dna-mark">DJ Chuy.</span>
+            </h2>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#555]">
+              Años detrás de la cabina en quinceañeras, bodas y fiestas por todo West
+              Texas y New México. DJ y maestro de ceremonia en la misma persona: lee la
+              pista, mezcla los géneros y mantiene tu evento en tiempo.
+            </p>
+            <p className="dna-display mt-8 text-[#111] text-[clamp(1.4rem,2.6vw,2rem)]">
+              Un solo equipo.
+              <br />
+              <span className="dna-mark">Producción completa.</span>
+            </p>
+            <div className="mt-9">
+              <PillButton href={CTA_HREF} variant="dark" withArrow external>
+                {CTA_PRIMARY}
+              </PillButton>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <Marquee />
 
       {/* La fiesta */}
       <section className="relative isolate overflow-hidden bg-black">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/55 to-black/40" />
-        <Container className="relative flex min-h-[420px] flex-col justify-end py-20 md:min-h-[520px]">
+        <Image
+          src="/sites/dna/dj-live.jpg"
+          alt="DJ Chuy mezclando en vivo en un evento"
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/60 to-black/45" />
+        <Container className="relative flex min-h-[460px] flex-col justify-end py-20 md:min-h-[580px]">
           <Eyebrow className="text-white/70">La fiesta</Eyebrow>
           <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
             Nadie
             <br />
-            <span className="text-[#ffc10a]">se queda sentado.</span>
+            <span className="text-[#BFEC34]">se queda sentado.</span>
           </h2>
         </Container>
       </section>
@@ -112,7 +158,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 flex flex-wrap gap-4">
-            <PillButton href={QUOTE_HREF} variant="white">
+            <PillButton href={CTA_HREF} variant="white" external>
               {CTA_PRIMARY}
             </PillButton>
             <PillButton href={EVENTS_HREF} variant="outlineDark">
@@ -132,7 +178,13 @@ export default function Home() {
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {EXPLORA_CARDS.map((card) => (
-              <a key={card.title} href={card.href} className="group block">
+              <a
+                key={card.title}
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
                 <div className="aspect-[4/5] overflow-hidden rounded-xl md:aspect-[3/4]">
                   <Image
                     src={card.image}
@@ -175,14 +227,14 @@ export default function Home() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-[#ffc10a]">{r.rating}</span>
+                      <span className="text-sm font-bold text-[#BFEC34]">{r.rating}</span>
                       <span className="flex gap-0.5">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <Star
                             key={i}
                             className={
                               i < r.rating
-                                ? "size-3.5 fill-[#ffc10a] text-[#ffc10a]"
+                                ? "size-3.5 fill-[#BFEC34] text-[#BFEC34]"
                                 : "size-3.5 text-white/25"
                             }
                           />
@@ -206,7 +258,7 @@ export default function Home() {
 
             <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white/70">
               <ChevronLeft className="size-4" />
-              <span className="rounded bg-[#ffc10a] px-2 py-0.5 font-bold text-[#111]">1</span>
+              <span className="rounded bg-[#BFEC34] px-2 py-0.5 font-bold text-[#111]">1</span>
               <span className="px-1">2</span>
               <span className="px-1">3</span>
               <ChevronRight className="size-4" />
@@ -220,7 +272,7 @@ export default function Home() {
         <Container className="max-w-[760px]">
           <Eyebrow>Una idea de inversión</Eyebrow>
           <h2 className="dna-display mt-5 text-white text-[clamp(2.5rem,6vw,4.5rem)]">
-            Paquetes <span className="text-[#ffc10a]">a tu medida.</span>
+            Paquetes <span className="text-[#BFEC34]">a tu medida.</span>
           </h2>
           <p className="mt-7 text-lg leading-relaxed text-[#d6d6d9]">
             Cada evento es diferente. Armamos un paquete según tu fecha, tus horas y los
@@ -232,7 +284,7 @@ export default function Home() {
             costos escondidos.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <PillButton href={QUOTE_HREF} variant="white" withArrow>
+            <PillButton href={CTA_HREF} variant="white" withArrow external>
               {CTA_PRIMARY}
             </PillButton>
             <PillButton href={SERVICES_HREF} variant="outlineDark">
@@ -251,8 +303,10 @@ export default function Home() {
           </h2>
           <Faq />
           <a
-            href={QUOTE_HREF}
-            className="mt-10 inline-block border-b-2 border-[#ffc10a] pb-1 text-sm font-bold text-[#111]"
+            href={CTA_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-block border-b-2 border-[#BFEC34] pb-1 text-sm font-bold text-[#111]"
           >
             ¿Otra pregunta? Escríbenos
           </a>
@@ -261,23 +315,33 @@ export default function Home() {
 
       {/* Contacto / CTA final */}
       <section id="contacto" className="relative isolate scroll-mt-20 overflow-hidden bg-black">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
-        <Container className="relative flex min-h-[460px] flex-col justify-center py-24 md:min-h-[560px]">
+        <Image
+          src="/sites/dna/robot-led.jpg"
+          alt="Robot LED en un evento"
+          fill
+          sizes="100vw"
+          className="-z-20 object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
+        <Container className="relative flex min-h-[500px] flex-col justify-center py-24 md:min-h-[600px]">
           <Eyebrow className="text-white/70">Aparta tu fecha</Eyebrow>
           <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
             Hagamos de tu
             <br />
             evento algo
             <br />
-            <span className="text-[#ffc10a]">inolvidable.</span>
+            <span className="text-[#BFEC34]">inolvidable.</span>
           </h2>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <PillButton href={QUOTE_HREF} variant="white" withArrow>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <PillButton href={CTA_HREF} variant="white" withArrow external>
               {CTA_PRIMARY}
             </PillButton>
-            <PillButton href={SERVICES_HREF} variant="outlineDark">
-              Ver servicios
-            </PillButton>
+            <a
+              href={PHONE_HREF}
+              className="inline-flex items-center gap-2 rounded-full border border-white/35 px-7 py-4 text-[15px] font-bold text-white transition-colors hover:bg-white/10"
+            >
+              Llama al {PHONE_DISPLAY}
+            </a>
           </div>
         </Container>
       </section>
@@ -297,7 +361,7 @@ function IncludeColumn({ label, items }: { label: string; items: string[] }) {
             key={item}
             className="flex items-start gap-3 border-b border-white/10 py-4 first:border-t"
           >
-            <Check className="mt-0.5 size-5 shrink-0 text-[#ffc10a]" />
+            <Check className="mt-0.5 size-5 shrink-0 text-[#BFEC34]" />
             <span className="text-[15px] font-medium text-white/90">{item}</span>
           </li>
         ))}

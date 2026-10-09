@@ -2,8 +2,16 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { NAV_LINKS, QUOTE_HREF, CTA_PRIMARY, BRAND } from "./data";
+import Image from "next/image";
+import { Menu, X, Phone } from "lucide-react";
+import {
+  NAV_LINKS,
+  CTA_HREF,
+  CTA_PRIMARY,
+  BRAND,
+  PHONE_DISPLAY,
+  PHONE_HREF,
+} from "./data";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -11,9 +19,20 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white">
       <div className="mx-auto flex h-[72px] w-full max-w-[1280px] items-center justify-between px-6 md:px-10">
-        {/* Wordmark */}
-        <Link href="/" className="flex shrink-0 items-center" aria-label={BRAND}>
-          <span className="dna-display text-xl text-[#111] md:text-2xl">{BRAND}</span>
+        {/* Logo badge (green logo on dark chip so it pops on white) */}
+        <Link
+          href="/"
+          className="flex shrink-0 items-center rounded-lg bg-black px-3 py-2"
+          aria-label={BRAND}
+        >
+          <Image
+            src="/sites/dna/logo-chuy.png"
+            alt={BRAND}
+            width={1041}
+            height={456}
+            priority
+            className="h-6 w-auto md:h-7"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -31,15 +50,21 @@ export function Header() {
 
         {/* Right cluster */}
         <div className="hidden items-center gap-6 lg:flex">
-          <span className="hidden text-[11px] font-bold uppercase tracking-[0.18em] text-[#8a8a8f] xl:inline">
-            West Texas · New México
-          </span>
-          <Link
-            href={QUOTE_HREF}
+          <a
+            href={PHONE_HREF}
+            className="flex items-center gap-1.5 text-[15px] font-extrabold text-[#111] hover:text-[#111]/60"
+          >
+            <Phone className="size-4" />
+            {PHONE_DISPLAY}
+          </a>
+          <a
+            href={CTA_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center rounded-full bg-[#111] px-6 py-3 text-[14px] font-bold text-white transition-colors hover:bg-black"
           >
             {CTA_PRIMARY}
-          </Link>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -68,13 +93,22 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              href={QUOTE_HREF}
+            <a
+              href={PHONE_HREF}
+              className="flex items-center gap-1.5 py-3 text-[15px] font-extrabold text-[#111]"
+            >
+              <Phone className="size-4" />
+              {PHONE_DISPLAY}
+            </a>
+            <a
+              href={CTA_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-[#111] px-6 py-3.5 text-[15px] font-bold text-white"
             >
               {CTA_PRIMARY}
-            </Link>
+            </a>
           </nav>
         </div>
       )}

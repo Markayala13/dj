@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { Container, PillButton } from "./ui";
-import { QUOTE_HREF, SERVICES_HREF, CTA_PRIMARY } from "./data";
+import { CTA_HREF, SERVICES_HREF, CTA_PRIMARY } from "./data";
 
 export function Hero() {
   return (
@@ -24,7 +24,7 @@ export function Hero() {
         <div className="mb-6 flex items-center gap-2">
           <span className="flex gap-0.5">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="size-4 fill-[#ffc10a] text-[#ffc10a]" />
+              <Star key={i} className="size-4 fill-[#BFEC34] text-[#BFEC34]" />
             ))}
           </span>
           <span className="text-sm font-bold text-white">
@@ -37,7 +37,7 @@ export function Hero() {
           <br />
           Bodas.
           <br />
-          <span className="text-[#ffc10a]">Eventos inolvidables.</span>
+          <span className="text-[#BFEC34]">Eventos inolvidables.</span>
         </h1>
 
         <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-[#d6d6d9] md:text-lg">
@@ -47,7 +47,7 @@ export function Hero() {
         </p>
 
         <div className="mt-9 flex flex-wrap gap-4">
-          <PillButton href={QUOTE_HREF} variant="white" withArrow>
+          <PillButton href={CTA_HREF} variant="white" withArrow external>
             {CTA_PRIMARY}
           </PillButton>
           <PillButton href={SERVICES_HREF} variant="outlineDark">

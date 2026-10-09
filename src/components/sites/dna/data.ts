@@ -1,15 +1,19 @@
-export const BRAND = "Chuy Romero";
+export const BRAND = "DJ Chuy";
 
-// Contact — phone/WhatsApp pending (user will provide). CTAs point to the
-// contact section until a real number/link is supplied.
-export const PHONE_DISPLAY = ""; // TODO: fill with real phone/WhatsApp
-export const PHONE_HREF = ""; // e.g. "tel:+1..." or WhatsApp link
-export const QUOTE_HREF = "#contacto";
+// Contact
+export const PHONE_DISPLAY = "432-741-2180";
+export const PHONE_HREF = "tel:+14327412180";
+export const WHATSAPP_HREF =
+  "https://wa.me/14327412180?text=Hola%20DJ%20Chuy%2C%20quiero%20cotizar%20mi%20evento";
+
+export const QUOTE_HREF = "#contacto"; // in-page anchor (nav "Contacto")
 export const SERVICES_HREF = "#servicios";
 export const EVENTS_HREF = "#eventos";
 export const REVIEWS_HREF = "#resenas";
 
+// Primary CTA sends to WhatsApp
 export const CTA_PRIMARY = "Cotiza tu evento";
+export const CTA_HREF = WHATSAPP_HREF;
 
 export const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Inicio", href: "/" },
@@ -75,31 +79,31 @@ export const EXPLORA_CARDS: {
   alt: string;
 }[] = [
   {
-    kicker: "Imagen y pantalla",
-    title: "Pantallas LED & DJ booth",
-    copy: "Pantallas LED para tu entrada y un DJ booth LED para fotos y videos que se ven increíbles toda la noche.",
+    kicker: "Producción",
+    title: "Pantallas LED & sonido",
+    copy: "Pantallas LED para tu entrada, line array de sonido profesional y torres de luz que transforman el salón.",
     cta: "Cotiza tu evento",
-    href: QUOTE_HREF,
-    image: "/sites/dna/venues.jpg",
-    alt: "Pista de baile con pantallas e iluminación",
+    href: WHATSAPP_HREF,
+    image: "/sites/dna/setup-led.jpg",
+    alt: "Montaje de pantalla LED, sonido y luces en un salón",
   },
   {
-    kicker: "Efectos",
-    title: "Chispas frías y nubes",
-    copy: "Chispas frías para la entrada y el baile en las nubes para un primer baile de película.",
+    kicker: "El show",
+    title: "Robot LED",
+    copy: "El robot LED gigante para la entrada o la hora loca. Pura adrenalina para quinceañeras y bodas.",
     cta: "Cotiza tu evento",
-    href: QUOTE_HREF,
-    image: "/sites/dna/extras.jpg",
-    alt: "Chispas frías en una entrada",
+    href: WHATSAPP_HREF,
+    image: "/sites/dna/robot-led.jpg",
+    alt: "Robot LED iluminado en un evento",
   },
   {
-    kicker: "Para cada ocasión",
-    title: "Quinces, bodas y más",
-    copy: "Quinceañeras, bodas, eventos privados y posadas navideñas en West Texas y New México.",
+    kicker: "Tu DJ",
+    title: "DJ Chuy en la cabina",
+    copy: "DJ y maestro de ceremonia toda la noche. Leemos la pista y la mantenemos llena de principio a fin.",
     cta: "Cotiza tu evento",
-    href: QUOTE_HREF,
-    image: "/sites/dna/quinces.jpg",
-    alt: "Salón lleno con las manos en alto",
+    href: WHATSAPP_HREF,
+    image: "/sites/dna/djchuy-booth.jpg",
+    alt: "DJ Chuy con su controlador",
   },
 ];
 
