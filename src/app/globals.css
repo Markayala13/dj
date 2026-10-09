@@ -128,3 +128,73 @@
     @apply font-sans;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   DNA Premium Event Services — site tokens & helpers
+--------------------------------------------------------------------------- */
+:root {
+  --dna-black: #000000;
+  --dna-ink: #111111;
+  --dna-white: #ffffff;
+  --dna-yellow: #ffc10a;
+  --dna-muted: #d6d6d9; /* body text on dark */
+  --dna-label: #8a8a8f; /* eyebrow labels */
+  --font-dna-sans: var(--font-archivo), "Archivo", Helvetica, Arial, sans-serif;
+  --font-dna-display: var(--font-archivo-black), "Archivo Black", var(--font-archivo),
+    Helvetica, Arial, sans-serif;
+}
+
+.dna {
+  font-family: var(--font-dna-sans);
+}
+
+/* Display headline: Archivo Black, tight, uppercase */
+.dna-display {
+  font-family: var(--font-dna-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  line-height: 0.92;
+}
+
+/* Small overline / eyebrow label */
+.dna-eyebrow {
+  font-family: var(--font-dna-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  color: var(--dna-label);
+}
+
+/* Yellow block-highlight behind inline text */
+.dna-mark {
+  background: var(--dna-yellow);
+  color: var(--dna-ink);
+  padding: 0 0.12em 0.04em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Scrolling marquee */
+@keyframes dna-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.dna-marquee-track {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: dna-marquee 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dna-marquee-track {
+    animation: none;
+  }
+}

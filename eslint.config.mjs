@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Tooling/skill scripts that ship with their own conventions.
+    ".claude/**",
+    ".agents/**",
   ]),
 ]);
 
