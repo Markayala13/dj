@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS, PHONE_DISPLAY, PHONE_HREF, BOOK_URL } from "./data";
+import { NAV_LINKS, QUOTE_HREF, CTA_PRIMARY, BRAND } from "./data";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -12,16 +11,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white">
       <div className="mx-auto flex h-[72px] w-full max-w-[1280px] items-center justify-between px-6 md:px-10">
-        {/* Logo (source asset is white-on-black; invert to sit on white header) */}
-        <Link href="/" className="flex shrink-0 items-center" aria-label="DNA Premium Event Services">
-          <Image
-            src="/sites/dna/dna-logo.png"
-            alt="DNA Premium Event Services"
-            width={1849}
-            height={869}
-            priority
-            className="h-9 w-auto invert"
-          />
+        {/* Wordmark */}
+        <Link href="/" className="flex shrink-0 items-center" aria-label={BRAND}>
+          <span className="dna-display text-xl text-[#111] md:text-2xl">{BRAND}</span>
         </Link>
 
         {/* Desktop nav */}
@@ -40,18 +32,13 @@ export function Header() {
         {/* Right cluster */}
         <div className="hidden items-center gap-6 lg:flex">
           <span className="hidden text-[11px] font-bold uppercase tracking-[0.18em] text-[#8a8a8f] xl:inline">
-            Serving Dallas–Fort Worth
+            West Texas · New México
           </span>
-          <a href={PHONE_HREF} className="text-[15px] font-extrabold text-[#111] hover:text-[#111]/60">
-            {PHONE_DISPLAY}
-          </a>
           <Link
-            href={BOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={QUOTE_HREF}
             className="inline-flex items-center rounded-full bg-[#111] px-6 py-3 text-[14px] font-bold text-white transition-colors hover:bg-black"
           >
-            Check My Date
+            {CTA_PRIMARY}
           </Link>
         </div>
 
@@ -60,7 +47,7 @@ export function Header() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           className="inline-flex size-10 items-center justify-center rounded-md text-[#111] lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
         >
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -81,17 +68,12 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <a href={PHONE_HREF} className="py-3 text-[15px] font-extrabold text-[#111]">
-              {PHONE_DISPLAY}
-            </a>
             <Link
-              href={BOOK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={QUOTE_HREF}
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-[#111] px-6 py-3.5 text-[15px] font-bold text-white"
             >
-              Check My Date
+              {CTA_PRIMARY}
             </Link>
           </nav>
         </div>

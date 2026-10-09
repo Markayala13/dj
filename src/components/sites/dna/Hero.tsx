@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { Container, PillButton } from "./ui";
-import { BOOK_URL, PRICING_URL } from "./data";
+import { QUOTE_HREF, SERVICES_HREF, CTA_PRIMARY } from "./data";
 
 export function Hero() {
   return (
@@ -27,28 +27,31 @@ export function Hero() {
               <Star key={i} className="size-4 fill-[#ffc10a] text-[#ffc10a]" />
             ))}
           </span>
-          <span className="text-sm font-bold text-white">5.0 from 335 Google reviews</span>
+          <span className="text-sm font-bold text-white">
+            Eventos inolvidables en West Texas y New México
+          </span>
         </div>
 
         <h1 className="dna-display max-w-4xl text-white text-[clamp(2.75rem,9vw,6.25rem)]">
-          Two families.
+          Quinceañeras.
           <br />
-          Two cultures.
+          Bodas.
           <br />
-          <span className="text-[#ffc10a]">One dance floor.</span>
+          <span className="text-[#ffc10a]">Eventos inolvidables.</span>
         </h1>
 
         <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-[#d6d6d9] md:text-lg">
-          Bilingual wedding DJs and MCs in Dallas–Fort Worth. Every DJ on our team
-          speaks English and Spanish, and MCs your night themselves.
+          Pantallas LED, chispas frías, sonido profesional y más de 14 luces móviles.
+          Producción completa para quinceañeras, bodas, eventos privados y posadas
+          navideñas.
         </p>
 
         <div className="mt-9 flex flex-wrap gap-4">
-          <PillButton href={BOOK_URL} variant="white" withArrow external>
-            Check my date
+          <PillButton href={QUOTE_HREF} variant="white" withArrow>
+            {CTA_PRIMARY}
           </PillButton>
-          <PillButton href={PRICING_URL} variant="outlineDark" external>
-            See pricing
+          <PillButton href={SERVICES_HREF} variant="outlineDark">
+            Ver servicios
           </PillButton>
         </div>
       </Container>

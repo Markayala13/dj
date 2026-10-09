@@ -8,14 +8,15 @@ import { Footer } from "@/components/sites/dna/Footer";
 import { Container, Eyebrow, PillButton } from "@/components/sites/dna/ui";
 import {
   STATS,
-  CROWD_LIST,
-  PACKAGE_INCLUDES,
-  NO_SURPRISES,
-  START_HERE,
+  EVENT_TYPES,
+  OFRECEMOS_A,
+  OFRECEMOS_B,
+  EXPLORA_CARDS,
   REVIEWS,
-  BOOK_URL,
-  PRICING_URL,
-  SOURCE,
+  QUOTE_HREF,
+  SERVICES_HREF,
+  EVENTS_HREF,
+  CTA_PRIMARY,
 } from "@/components/sites/dna/data";
 
 export default function Home() {
@@ -38,41 +39,44 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* The hard part */}
-      <section className="bg-white py-24 md:py-32">
+      {/* Eventos */}
+      <section id="eventos" className="scroll-mt-20 bg-white py-24 md:py-32">
         <Container className="grid gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
-            <Eyebrow>The hard part</Eyebrow>
+            <Eyebrow>Para cada ocasión</Eyebrow>
             <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-              Anybody can play music.
+              Eventos que se recuerdan.
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#555]">
-              The reception is the only part of the day you cannot fix while it is
-              happening. If the floor empties at 9:30, nobody tells you. You find out in
-              the photos.
+              Desde la entrada hasta la última canción, producimos cada momento de tu
+              fiesta. Pantallas, luces, efectos y un maestro de ceremonia que mantiene
+              todo en su lugar.
             </p>
             <p className="dna-display mt-8 text-[#111] text-[clamp(1.4rem,2.6vw,2rem)]">
-              We don&apos;t just play genres.
+              Tú disfrutas.
               <br />
-              <span className="dna-mark">We read people.</span>
+              <span className="dna-mark">Nosotros nos encargamos.</span>
             </p>
             <div className="mt-9">
-              <PillButton href={BOOK_URL} variant="dark" withArrow external>
-                Talk to us about your wedding
+              <PillButton href={QUOTE_HREF} variant="dark" withArrow>
+                {CTA_PRIMARY}
               </PillButton>
             </div>
           </div>
 
           <ul className="lg:pt-10">
-            {CROWD_LIST.map((item, i) => (
+            {EVENT_TYPES.map((item, i) => (
               <li
-                key={item}
+                key={item.name}
                 className="flex items-start gap-6 border-b border-black/10 py-6 first:border-t"
               >
                 <span className="text-sm font-bold tabular-nums text-[#bdbdbd]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="text-lg font-bold text-[#111]">{item}</span>
+                <span>
+                  <span className="block text-lg font-bold text-[#111]">{item.name}</span>
+                  <span className="mt-1 block text-[15px] text-[#777]">{item.note}</span>
+                </span>
               </li>
             ))}
           </ul>
@@ -81,94 +85,54 @@ export default function Home() {
 
       <Marquee />
 
-      {/* Midnight */}
+      {/* La fiesta */}
       <section className="relative isolate overflow-hidden bg-black">
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/55 to-black/40" />
-        <Container className="relative flex min-h-[560px] flex-col justify-end py-20 md:min-h-[680px]">
-          <Eyebrow className="text-white/70">Midnight</Eyebrow>
+        <Container className="relative flex min-h-[420px] flex-col justify-end py-20 md:min-h-[520px]">
+          <Eyebrow className="text-white/70">La fiesta</Eyebrow>
           <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
-            Nobody
+            Nadie
             <br />
-            <span className="text-[#ffc10a]">has sat down.</span>
+            <span className="text-[#ffc10a]">se queda sentado.</span>
           </h2>
         </Container>
       </section>
 
-      {/* What is included */}
-      <section className="bg-black py-24 text-white md:py-32">
+      {/* Servicios / Ofrecemos */}
+      <section id="servicios" className="scroll-mt-20 bg-black py-24 text-white md:py-32">
         <Container>
-          <Eyebrow>What is included</Eyebrow>
+          <Eyebrow>Lo que incluimos</Eyebrow>
           <h2 className="dna-display mt-5 max-w-3xl text-white text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            More than just a wedding DJ.
+            Todo para tu evento.
           </h2>
 
           <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
-            <IncludeColumn label="Every package" items={PACKAGE_INCLUDES} />
-            <IncludeColumn label="And no surprises" items={NO_SURPRISES} />
+            <IncludeColumn label="Producción" items={OFRECEMOS_A} />
+            <IncludeColumn label="Efectos y más" items={OFRECEMOS_B} />
           </div>
 
           <div className="mt-12 flex flex-wrap gap-4">
-            <PillButton href={`${SOURCE}/the-djs`} variant="white" external>
-              Meet the DJs
+            <PillButton href={QUOTE_HREF} variant="white">
+              {CTA_PRIMARY}
             </PillButton>
-            <PillButton href={BOOK_URL} variant="outlineDark" external>
-              Check my date
+            <PillButton href={EVENTS_HREF} variant="outlineDark">
+              Ver eventos
             </PillButton>
           </div>
         </Container>
       </section>
 
-      {/* The roster */}
+      {/* Explora */}
       <section className="bg-white py-24 md:py-32">
         <Container>
-          <Eyebrow>The roster</Eyebrow>
-          <h2 className="dna-display mt-5 max-w-4xl text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Eight bilingual DJs. One of them <span className="dna-mark">is yours.</span>
-          </h2>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#555]">
-            Read their stories, hear a mix, and pick the one who fits your night.
-            Whoever you choose MCs the whole reception themselves.
-          </p>
-
-          <div className="mt-12 overflow-hidden rounded-xl">
-            <Image
-              src="/sites/dna/team.jpg"
-              alt="The eight DJs of DNA Premium Event Services"
-              width={2438}
-              height={1274}
-              sizes="(max-width: 1280px) 100vw, 1200px"
-              className="h-auto w-full object-cover"
-            />
-          </div>
-
-          <p className="mt-6 text-[#555]">
-            One of these eight will be your DJ, and they will MC your night themselves.
-          </p>
-          <div className="mt-8">
-            <PillButton href={`${SOURCE}/the-djs`} variant="dark" withArrow external>
-              Meet the DJs
-            </PillButton>
-          </div>
-        </Container>
-      </section>
-
-      {/* Start here */}
-      <section className="bg-white pb-24 md:pb-32">
-        <Container>
-          <Eyebrow>Where to next</Eyebrow>
+          <Eyebrow>Explora</Eyebrow>
           <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Start here.
+            Arma tu fiesta.
           </h2>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {START_HERE.map((card) => (
-              <a
-                key={card.title}
-                href={card.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
+            {EXPLORA_CARDS.map((card) => (
+              <a key={card.title} href={card.href} className="group block">
                 <div className="aspect-[4/5] overflow-hidden rounded-xl md:aspect-[3/4]">
                   <Image
                     src={card.image}
@@ -194,19 +158,19 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Reviews */}
-      <section className="bg-white pb-24 md:pb-32">
+      {/* Reseñas (placeholder) */}
+      <section id="resenas" className="scroll-mt-20 bg-white pb-24 md:pb-32">
         <Container>
-          <Eyebrow>335 reviews, five stars</Eyebrow>
+          <Eyebrow>Lo que dicen · ejemplos</Eyebrow>
           <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Don&apos;t take our word for it.
+            Nuestros clientes lo cuentan mejor.
           </h2>
 
           <div className="mt-12 rounded-2xl bg-[#0d0d0d] p-5 md:p-8">
             <div className="flex gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {REVIEWS.map((r) => (
+              {REVIEWS.map((r, idx) => (
                 <article
-                  key={r.author}
+                  key={idx}
                   className="flex min-w-[300px] max-w-[340px] flex-1 flex-col rounded-xl bg-white/[0.03] p-6 ring-1 ring-white/10"
                 >
                   <div className="flex items-center justify-between">
@@ -240,47 +204,39 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Pagination (visual, matches source widget) */}
             <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white/70">
               <ChevronLeft className="size-4" />
-              <span className="px-1">1</span>
-              <span className="px-1">…</span>
-              <span className="px-1">13</span>
-              <span className="px-1">14</span>
-              <span className="rounded bg-[#ffc10a] px-2 py-0.5 font-bold text-[#111]">15</span>
-              <span className="px-1">16</span>
-              <span className="px-1">17</span>
-              <span className="px-1">…</span>
-              <span className="px-1">117</span>
+              <span className="rounded bg-[#ffc10a] px-2 py-0.5 font-bold text-[#111]">1</span>
+              <span className="px-1">2</span>
+              <span className="px-1">3</span>
               <ChevronRight className="size-4" />
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Pricing */}
+      {/* Inversión (placeholder) */}
       <section className="bg-black py-24 text-white md:py-32">
         <Container className="max-w-[760px]">
-          <Eyebrow>An idea of how much we charge</Eyebrow>
+          <Eyebrow>Una idea de inversión</Eyebrow>
           <h2 className="dna-display mt-5 text-white text-[clamp(2.5rem,6vw,4.5rem)]">
-            Weddings run <span className="text-[#ffc10a]">$2,799 to $9,999.</span>
+            Paquetes <span className="text-[#ffc10a]">a tu medida.</span>
           </h2>
           <p className="mt-7 text-lg leading-relaxed text-[#d6d6d9]">
-            Most couples land between $2,799 and $4,499, which covers seven of our eight
-            DJs. Booking Nate himself runs $4,999 to $9,999, the top of that being full
-            LED wall production.
+            Cada evento es diferente. Armamos un paquete según tu fecha, tus horas y los
+            efectos que elijas — pantallas LED, DJ booth, chispas frías, baile en las
+            nubes, luces móviles y maestro de ceremonia.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-[#d6d6d9]">
-            Where you land depends on your date, your hours and what you add. What does
-            not change is the DJ, the MC, the gear or the planning. There is no stripped
-            down version.
+            Escríbenos con los detalles y te pasamos una cotización el mismo día, sin
+            costos escondidos.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <PillButton href={PRICING_URL} variant="white" withArrow external>
-              See every DJ and their exact pricing
+            <PillButton href={QUOTE_HREF} variant="white" withArrow>
+              {CTA_PRIMARY}
             </PillButton>
-            <PillButton href={PRICING_URL} variant="outlineDark" external>
-              How the tiers work
+            <PillButton href={SERVICES_HREF} variant="outlineDark">
+              Ver servicios
             </PillButton>
           </div>
         </Container>
@@ -289,40 +245,38 @@ export default function Home() {
       {/* FAQ */}
       <section className="bg-white py-24 md:py-32">
         <Container>
-          <Eyebrow>Before you ask</Eyebrow>
+          <Eyebrow>Antes de preguntar</Eyebrow>
           <h2 className="dna-display mt-5 max-w-3xl text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Questions couples actually ask.
+            Preguntas frecuentes.
           </h2>
           <Faq />
           <a
-            href={BOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={QUOTE_HREF}
             className="mt-10 inline-block border-b-2 border-[#ffc10a] pb-1 text-sm font-bold text-[#111]"
           >
-            Still have a question? Talk to us
+            ¿Otra pregunta? Escríbenos
           </a>
         </Container>
       </section>
 
-      {/* Final CTA */}
-      <section className="relative isolate overflow-hidden bg-black">
+      {/* Contacto / CTA final */}
+      <section id="contacto" className="relative isolate scroll-mt-20 overflow-hidden bg-black">
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
-        <Container className="relative flex min-h-[520px] flex-col justify-center py-24 md:min-h-[600px]">
-          <Eyebrow className="text-white/70">First come, first served</Eyebrow>
+        <Container className="relative flex min-h-[460px] flex-col justify-center py-24 md:min-h-[560px]">
+          <Eyebrow className="text-white/70">Aparta tu fecha</Eyebrow>
           <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
-            Let&apos;s find out
+            Hagamos de tu
             <br />
-            if your date
+            evento algo
             <br />
-            <span className="text-[#ffc10a]">is still open.</span>
+            <span className="text-[#ffc10a]">inolvidable.</span>
           </h2>
           <div className="mt-9 flex flex-wrap gap-4">
-            <PillButton href={BOOK_URL} variant="white" withArrow external>
-              Check my date
+            <PillButton href={QUOTE_HREF} variant="white" withArrow>
+              {CTA_PRIMARY}
             </PillButton>
-            <PillButton href={PRICING_URL} variant="outlineDark" external>
-              See pricing first
+            <PillButton href={SERVICES_HREF} variant="outlineDark">
+              Ver servicios
             </PillButton>
           </div>
         </Container>

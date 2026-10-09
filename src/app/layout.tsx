@@ -15,9 +15,9 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Bilingual Wedding DJ & MC in Dallas-Fort Worth | DNA Premium",
+  title: "Chuy Romero | Producción de eventos en West Texas y New México",
   description:
-    "Bilingual DJ and MC for multicultural weddings across Dallas-Fort Worth. English and Spanish, one wedding per DJ per day. Check your date today.",
+    "Quinceañeras, bodas, eventos privados y posadas navideñas. Pantallas LED, chispas frías, baile en las nubes, sonido profesional, más de 14 luces móviles y maestro de ceremonia. West Texas y New México.",
 };
 
 export default function RootLayout({

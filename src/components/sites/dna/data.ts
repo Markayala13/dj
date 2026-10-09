@@ -1,71 +1,71 @@
-export const PHONE_DISPLAY = "(469) 259-7239";
-export const PHONE_HREF = "tel:+14692597239";
-export const BOOK_URL = "https://dnaeventservices.com/book";
-export const PRICING_URL = "https://dnaeventservices.com/pricing";
-export const SOURCE = "https://dnaeventservices.com";
+export const BRAND = "Chuy Romero";
+
+// Contact — phone/WhatsApp pending (user will provide). CTAs point to the
+// contact section until a real number/link is supplied.
+export const PHONE_DISPLAY = ""; // TODO: fill with real phone/WhatsApp
+export const PHONE_HREF = ""; // e.g. "tel:+1..." or WhatsApp link
+export const QUOTE_HREF = "#contacto";
+export const SERVICES_HREF = "#servicios";
+export const EVENTS_HREF = "#eventos";
+export const REVIEWS_HREF = "#resenas";
+
+export const CTA_PRIMARY = "Cotiza tu evento";
 
 export const NAV_LINKS: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Pricing", href: PRICING_URL },
-  { label: "The DJs", href: `${SOURCE}/the-djs` },
-  { label: "Extras", href: `${SOURCE}/extras` },
-  { label: "Other Events", href: `${SOURCE}/other-events` },
-  { label: "Make a Payment", href: `${SOURCE}/make-a-payment` },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: SERVICES_HREF },
+  { label: "Eventos", href: EVENTS_HREF },
+  { label: "Reseñas", href: REVIEWS_HREF },
+  { label: "Contacto", href: QUOTE_HREF },
 ];
 
 export const FOOTER_LINKS: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Pricing", href: PRICING_URL },
-  { label: "The DJs", href: `${SOURCE}/the-djs` },
-  { label: "Extras", href: `${SOURCE}/extras` },
-  { label: "Other Events", href: `${SOURCE}/other-events` },
-  { label: "Venues", href: `${SOURCE}/venues` },
-  { label: "Vendor Family", href: `${SOURCE}/vendor-family` },
-  { label: "Make a Payment", href: `${SOURCE}/make-a-payment` },
-  { label: "Check My Date", href: BOOK_URL },
-  { label: PHONE_DISPLAY, href: PHONE_HREF },
-  { label: "Client Login", href: `${SOURCE}/client-login` },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: SERVICES_HREF },
+  { label: "Eventos", href: EVENTS_HREF },
+  { label: "Reseñas", href: REVIEWS_HREF },
+  { label: "Contacto", href: QUOTE_HREF },
 ];
 
 export const STATS: { value: string; label: string }[] = [
-  { value: "5.0", label: "Google rating" },
-  { value: "335", label: "Reviews" },
-  { value: "8", label: "Bilingual DJs" },
-  { value: "2019", label: "Est. in Dallas" },
-  { value: "1", label: "Wedding per date" },
+  { value: "+14", label: "Luces móviles" },
+  { value: "LED", label: "Pantallas & DJ booth" },
+  { value: "4", label: "Tipos de evento" },
+  { value: "2", label: "Estados que cubrimos" },
+  { value: "100%", label: "Sonido profesional" },
 ];
 
-export const CROWD_LIST: string[] = [
-  "Your parents want cumbias.",
-  "Your friends want reggaetón.",
-  "His family wants country.",
-  "And somebody's tío has requested norteñas four times already.",
+// Event types (numbered list in the "Eventos" section)
+export const EVENT_TYPES: { name: string; note: string }[] = [
+  { name: "Quinceañeras", note: "El vals, la sorpresa y la pista toda la noche." },
+  { name: "Bodas", note: "De la ceremonia al último baile, sin que falte nada." },
+  { name: "Eventos privados", note: "Cumpleaños, aniversarios y reuniones familiares." },
+  { name: "Posadas navideñas", note: "La temporada decembrina con producción completa." },
 ];
 
 export const MARQUEE_ITEMS: string[] = [
-  "Bilingual DJs & MCs",
-  "One wedding per date",
-  "Dallas–Fort Worth",
-  "335 five-star reviews",
-  "English & Spanish",
-  "Since 2019",
+  "Quinceañeras",
+  "Bodas",
+  "Eventos privados",
+  "Posadas navideñas",
+  "West Texas",
+  "New México",
 ];
 
-export const PACKAGE_INCLUDES: string[] = [
-  "Bilingual DJ and professional MC, all night",
-  "Full reception sound and dance floor lighting",
-  "Wireless mics for toasts and ceremony",
-  "Planning app, song lists and timeline building",
+// "Ofrecemos" — split across two columns
+export const OFRECEMOS_A: string[] = [
+  "Pantallas LED",
+  "DJ booth LED para fotos y videos",
+  "Sonido profesional",
 ];
 
-export const NO_SURPRISES: string[] = [
-  "You know your DJ's name before you sign anything",
-  "One wedding a day. Nobody is leaving yours early",
-  "Everything quoted up front. No day-of upsells",
-  "Insured, with backup gear for every part of the night",
+export const OFRECEMOS_B: string[] = [
+  "Chispas frías y baile en las nubes",
+  "Más de 14 luces móviles",
+  "Maestro de ceremonia",
 ];
 
-export const START_HERE: {
+export const EXPLORA_CARDS: {
   kicker: string;
   title: string;
   copy: string;
@@ -75,31 +75,31 @@ export const START_HERE: {
   alt: string;
 }[] = [
   {
-    kicker: "The rooms",
-    title: "Venues we know",
-    copy: "We have played most of them. Load-in, power, curfews and what actually fills the floor in each room.",
-    cta: "See the venues",
-    href: `${SOURCE}/venues`,
+    kicker: "Imagen y pantalla",
+    title: "Pantallas LED & DJ booth",
+    copy: "Pantallas LED para tu entrada y un DJ booth LED para fotos y videos que se ven increíbles toda la noche.",
+    cta: "Cotiza tu evento",
+    href: QUOTE_HREF,
     image: "/sites/dna/venues.jpg",
-    alt: "A packed dance floor at a DFW wedding venue",
+    alt: "Pista de baile con pantallas e iluminación",
   },
   {
-    kicker: "Add-ons",
-    title: "Extras & upgrades",
-    copy: "Cold sparks, dancing on clouds, LED floors, photo booths, uplighting and LED wall production.",
-    cta: "See the extras",
-    href: `${SOURCE}/extras`,
+    kicker: "Efectos",
+    title: "Chispas frías y nubes",
+    copy: "Chispas frías para la entrada y el baile en las nubes para un primer baile de película.",
+    cta: "Cotiza tu evento",
+    href: QUOTE_HREF,
     image: "/sites/dna/extras.jpg",
-    alt: "Cold spark fountains at a grand entrance",
+    alt: "Chispas frías en una entrada",
   },
   {
-    kicker: "Not a wedding?",
-    title: "Quinces & events",
-    copy: "Quinceañeras, corporate parties, school dances, anniversaries and grand openings.",
-    cta: "See other events",
-    href: `${SOURCE}/other-events`,
+    kicker: "Para cada ocasión",
+    title: "Quinces, bodas y más",
+    copy: "Quinceañeras, bodas, eventos privados y posadas navideñas en West Texas y New México.",
+    cta: "Cotiza tu evento",
+    href: QUOTE_HREF,
     image: "/sites/dna/quinces.jpg",
-    alt: "A full room with hands in the air",
+    alt: "Salón lleno con las manos en alto",
   },
 ];
 
@@ -111,41 +111,42 @@ export type Review = {
   initials: string;
 };
 
+// Placeholder reviews (example content) — replace with real testimonials.
 export const REVIEWS: Review[] = [
   {
     rating: 5,
-    date: "Jan 20, 2026",
-    body: "DJ Nate with DNA was incredible from start to finish. The presentation was polished and the floor never emptied once all night.",
-    author: "Marisol G.",
-    initials: "MG",
+    date: "Ejemplo",
+    body: "Las pantallas LED y las chispas frías hicieron la entrada de mi quinceañera inolvidable. El equipo llegó temprano y todo salió perfecto.",
+    author: "Clienta ejemplo",
+    initials: "CE",
   },
   {
     rating: 5,
-    date: "Jan 15, 2026",
-    body: "DJ Nate was a huge blessing to our wedding. We whole heartedly recommend Nate because he brought peace to this stressful event planning. We enjoyed us...",
-    author: "Cynthia",
-    initials: "C",
+    date: "Ejemplo",
+    body: "Contratamos para nuestra boda y el maestro de ceremonia mantuvo todo en tiempo. La pista no se vació en toda la noche.",
+    author: "Pareja ejemplo",
+    initials: "PE",
   },
   {
     rating: 5,
-    date: "Jan 12, 2026",
-    body: "Bilingual the whole night and read the room perfectly. Our families danced from the first song to the last. Worth every dollar.",
-    author: "Nancy Dixon",
-    initials: "ND",
+    date: "Ejemplo",
+    body: "El baile en las nubes para el primer baile quedó de película. Sonido profesional y muchísimas luces. Totalmente recomendados.",
+    author: "Cliente ejemplo",
+    initials: "CE",
   },
   {
     rating: 5,
-    date: "Jan 08, 2026",
-    body: "We love working with Nate and his entire team at DNA Event Services! Our team works with different DJs on a regular basis and the DJs at DNA ar...",
-    author: "Mathew DeBlanc",
-    initials: "MD",
+    date: "Ejemplo",
+    body: "Hicieron nuestra posada navideña y fue un éxito. Las más de 14 luces móviles cambiaron por completo el salón.",
+    author: "Familia ejemplo",
+    initials: "FE",
   },
   {
     rating: 5,
-    date: "Dec 29, 2025",
-    body: "The MC kept everything on schedule without it feeling stiff. Transitions between cumbias, country and reggaetón were seamless.",
-    author: "Alex R.",
-    initials: "AR",
+    date: "Ejemplo",
+    body: "Servicio puntual y profesional en New México. El DJ booth LED para fotos y videos fue el hit de la fiesta.",
+    author: "Clienta ejemplo",
+    initials: "CE",
   },
 ];
 
@@ -153,27 +154,27 @@ export type Faq = { q: string; a: string };
 
 export const FAQS: Faq[] = [
   {
-    q: "How much does a wedding DJ cost in Dallas–Fort Worth?",
-    a: "DNA wedding packages start at $2,799 for up to four hours of bilingual DJ and MC service. The tier you land in depends on which DJ is open on your date, not on what happens that night.",
+    q: "¿Qué tipo de eventos cubren?",
+    a: "Quinceañeras, bodas, eventos privados y posadas navideñas. Armamos la producción completa para cada ocasión.",
   },
   {
-    q: "Do you have bilingual DJs who speak Spanish?",
-    a: "All eight DNA DJs are fully bilingual in English and Spanish, and each one MCs their own room. You are not getting a translated script read off a card.",
+    q: "¿Qué incluye el servicio?",
+    a: "Pantallas LED, DJ booth LED para fotos y videos, chispas frías y baile en las nubes, sonido profesional, más de 14 luces móviles y maestro de ceremonia.",
   },
   {
-    q: "How far in advance should we book?",
-    a: "Nine to eighteen months for popular dates. One wedding per DJ per day, so spring and fall Saturdays go first.",
+    q: "¿En qué zonas trabajan?",
+    a: "Cubrimos West Texas y New México. Escríbenos con la ubicación de tu evento y lo confirmamos.",
   },
   {
-    q: "Can you play country and regional Mexican at the same wedding?",
-    a: "That is the wedding we are built for. The job is not knowing both catalogues, it is knowing when to move between them before the floor empties.",
+    q: "¿Tienen maestro de ceremonia?",
+    a: "Sí. Dirigimos tu evento de principio a fin para que tú solo disfrutes.",
   },
   {
-    q: "Do you provide an MC as well as a DJ?",
-    a: "Yes, and it is the same person. Your DJ MCs the whole night, so the person reading the room is the person on the mic.",
+    q: "¿Hacen chispas frías y baile en las nubes?",
+    a: "Sí, son de nuestros efectos más pedidos para la entrada y el primer baile.",
   },
   {
-    q: "How do we reserve our date?",
-    a: "A signed agreement plus the deposit holds it. $500 with most of our DJs, or 30% of the total with Nate. The balance is not due until 30 days out.",
+    q: "¿Cómo aparto mi fecha?",
+    a: "Escríbenos con tu fecha y tipo de evento y te pasamos la cotización el mismo día para apartar tu lugar.",
   },
 ];
