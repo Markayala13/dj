@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Check, Star, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Header } from "@/components/sites/dna/Header";
 import { Hero } from "@/components/sites/dna/Hero";
 import { Marquee } from "@/components/sites/dna/Marquee";
 import { Faq } from "@/components/sites/dna/Faq";
 import { VideoReels } from "@/components/sites/dna/VideoReels";
+import { ReviewsCarousel } from "@/components/sites/dna/ReviewsCarousel";
 import { Footer } from "@/components/sites/dna/Footer";
 import { Container, Eyebrow, PillButton } from "@/components/sites/dna/ui";
 import {
@@ -13,7 +14,6 @@ import {
   OFRECEMOS_A,
   OFRECEMOS_B,
   EXPLORA_CARDS,
-  REVIEWS,
   CTA_HREF,
   SERVICES_HREF,
   EVENTS_HREF,
@@ -228,52 +228,7 @@ export default function Home() {
             Nuestros clientes lo cuentan mejor.
           </h2>
 
-          <div className="mt-12 rounded-2xl bg-[#0d0d0d] p-5 md:p-8">
-            <div className="flex gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {REVIEWS.map((r, idx) => (
-                <article
-                  key={idx}
-                  className="flex min-w-[300px] max-w-[340px] flex-1 flex-col rounded-xl bg-white/[0.03] p-6 ring-1 ring-white/10"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-[#BFEC34]">{r.rating}</span>
-                      <span className="flex gap-0.5">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            className={
-                              i < r.rating
-                                ? "size-3.5 fill-[#BFEC34] text-[#BFEC34]"
-                                : "size-3.5 text-white/25"
-                            }
-                          />
-                        ))}
-                      </span>
-                    </div>
-                    <span className="text-xs text-white/50">{r.date}</span>
-                  </div>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-white/80">
-                    {r.body}
-                  </p>
-                  <div className="mt-5 flex items-center gap-3">
-                    <span className="flex size-8 items-center justify-center rounded-full bg-white/10 text-xs font-bold text-white">
-                      {r.initials}
-                    </span>
-                    <span className="text-sm font-semibold text-white">{r.author}</span>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white/70">
-              <ChevronLeft className="size-4" />
-              <span className="rounded bg-[#BFEC34] px-2 py-0.5 font-bold text-[#111]">1</span>
-              <span className="px-1">2</span>
-              <span className="px-1">3</span>
-              <ChevronRight className="size-4" />
-            </div>
-          </div>
+          <ReviewsCarousel />
         </Container>
       </section>
 
