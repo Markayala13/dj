@@ -5,6 +5,7 @@ import { Hero } from "@/components/sites/dna/Hero";
 import { Marquee } from "@/components/sites/dna/Marquee";
 import { Faq } from "@/components/sites/dna/Faq";
 import { VideoReels } from "@/components/sites/dna/VideoReels";
+import { VideoKick } from "@/components/sites/dna/VideoKick";
 import { ReviewsCarousel } from "@/components/sites/dna/ReviewsCarousel";
 import { Footer } from "@/components/sites/dna/Footer";
 import { Container, Eyebrow, PillButton } from "@/components/sites/dna/ui";
@@ -25,6 +26,7 @@ import {
 export default function Home() {
   return (
     <main className="dna flex flex-col bg-white">
+      <VideoKick />
       <Header />
       <Hero />
 
