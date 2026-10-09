@@ -5,6 +5,7 @@ import { Hero } from "@/components/sites/dna/Hero";
 import { Marquee } from "@/components/sites/dna/Marquee";
 import { Faq } from "@/components/sites/dna/Faq";
 import { VideoReels } from "@/components/sites/dna/VideoReels";
+import { ScrollSequence } from "@/components/sites/dna/ScrollSequence";
 import { ReviewsCarousel } from "@/components/sites/dna/ReviewsCarousel";
 import { Footer } from "@/components/sites/dna/Footer";
 import { Container, Eyebrow, PillButton } from "@/components/sites/dna/ui";
@@ -125,25 +126,8 @@ export default function Home() {
 
       <Marquee />
 
-      {/* La fiesta */}
-      <section className="relative isolate overflow-hidden bg-black">
-        <Image
-          src="/sites/dna/dj-live.jpg"
-          alt="DJ Chuy mezclando en vivo en un evento"
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover object-center"
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/60 to-black/45" />
-        <Container className="relative flex min-h-[460px] flex-col justify-end py-20 md:min-h-[580px]">
-          <Eyebrow className="text-white/70">La fiesta</Eyebrow>
-          <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
-            Nadie
-            <br />
-            <span className="text-[#BFEC34]">se queda sentado.</span>
-          </h2>
-        </Container>
-      </section>
+      {/* La fiesta — secuencia ligada al scroll */}
+      <ScrollSequence />
 
       {/* Servicios / Ofrecemos */}
       <section id="servicios" className="scroll-mt-20 bg-black py-24 text-white md:py-32">
