@@ -83,13 +83,6 @@ export default function Home() {
 
       {/* Midnight */}
       <section className="relative isolate overflow-hidden bg-black">
-        <Image
-          src="/sites/dna/midnight.jpg"
-          alt="A packed dance floor near midnight"
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover object-center"
-        />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/55 to-black/40" />
         <Container className="relative flex min-h-[560px] flex-col justify-end py-20 md:min-h-[680px]">
           <Eyebrow className="text-white/70">Midnight</Eyebrow>
@@ -314,13 +307,6 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="relative isolate overflow-hidden bg-black">
-        <Image
-          src="/sites/dna/finale.jpg"
-          alt="A couple watching fireworks at their wedding"
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover object-center"
-        />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
         <Container className="relative flex min-h-[520px] flex-col justify-center py-24 md:min-h-[600px]">
           <Eyebrow className="text-white/70">First come, first served</Eyebrow>

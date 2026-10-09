@@ -5,18 +5,7 @@ import { BOOK_URL, PRICING_URL } from "./data";
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-black">
-      {/* Background video */}
-      <video
-        className="absolute inset-0 -z-20 size-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        poster="/sites/dna/hero-poster.jpg"
-      >
-        <source src="/sites/dna/hero.mp4" type="video/mp4" />
-      </video>
-      {/* Dark overlay for legibility */}
+      {/* Background overlays (media removed) */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
       <div className="absolute inset-0 -z-10 bg-black/25" />
 
