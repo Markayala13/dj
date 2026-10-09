@@ -4,6 +4,7 @@ import { Header } from "@/components/sites/dna/Header";
 import { Hero } from "@/components/sites/dna/Hero";
 import { Marquee } from "@/components/sites/dna/Marquee";
 import { Faq } from "@/components/sites/dna/Faq";
+import { VideoReels } from "@/components/sites/dna/VideoReels";
 import { Footer } from "@/components/sites/dna/Footer";
 import { Container, Eyebrow, PillButton } from "@/components/sites/dna/ui";
 import {
@@ -206,6 +207,15 @@ export default function Home() {
                 </span>
               </a>
             ))}
+          </div>
+
+          {/* Reels en acción */}
+          <div className="mt-16">
+            <p className="dna-eyebrow">Míralo en acción</p>
+            <h3 className="dna-display mt-3 text-[#111] text-[clamp(1.6rem,3.2vw,2.5rem)]">
+              Así se ven nuestros <span className="dna-mark">eventos.</span>
+            </h3>
+            <VideoReels />
           </div>
         </Container>
       </section>
