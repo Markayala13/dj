@@ -9,6 +9,7 @@ export const WHATSAPP_HREF =
 export const QUOTE_HREF = "#contacto"; // in-page anchor (nav "Contacto")
 export const SERVICES_HREF = "#servicios";
 export const EVENTS_HREF = "#eventos";
+export const EQUIPMENT_HREF = "#equipo";
 export const REVIEWS_HREF = "#resenas";
 
 // Primary CTA sends to WhatsApp
@@ -18,6 +19,7 @@ export const CTA_HREF = WHATSAPP_HREF;
 export const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: SERVICES_HREF },
+  { label: "Equipo", href: EQUIPMENT_HREF },
   { label: "Eventos", href: EVENTS_HREF },
   { label: "Reseñas", href: REVIEWS_HREF },
   { label: "Contacto", href: QUOTE_HREF },
@@ -26,6 +28,7 @@ export const NAV_LINKS: { label: string; href: string }[] = [
 export const FOOTER_LINKS: { label: string; href: string }[] = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: SERVICES_HREF },
+  { label: "Equipo", href: EQUIPMENT_HREF },
   { label: "Eventos", href: EVENTS_HREF },
   { label: "Reseñas", href: REVIEWS_HREF },
   { label: "Contacto", href: QUOTE_HREF },
@@ -115,44 +118,107 @@ export type Review = {
   initials: string;
 };
 
-// Placeholder reviews (example content) — replace with real testimonials.
 export const REVIEWS: Review[] = [
   {
     rating: 5,
-    date: "Ejemplo",
-    body: "Las pantallas LED y las chispas frías hicieron la entrada de mi quinceañera inolvidable. El equipo llegó temprano y todo salió perfecto.",
-    author: "Clienta ejemplo",
-    initials: "CE",
+    date: "Boda",
+    body: "Chuy puso muy buen ambiente en nuestra boda. Hasta los que nunca bailan terminaron en la pista. ¡Gracias por todo!",
+    author: "Mariana",
+    initials: "MA",
   },
   {
     rating: 5,
-    date: "Ejemplo",
-    body: "Contratamos para nuestra boda y el maestro de ceremonia mantuvo todo en tiempo. La pista no se vació en toda la noche.",
-    author: "Pareja ejemplo",
-    initials: "PE",
+    date: "Cumpleaños",
+    body: "Lo contratamos para mi cumpleaños y la pasamos bien a gusto. Buena música y el robot fue lo que más les gustó a todos.",
+    author: "José",
+    initials: "JO",
   },
   {
     rating: 5,
-    date: "Ejemplo",
-    body: "El baile en las nubes para el primer baile quedó de película. Sonido profesional y muchísimas luces. Totalmente recomendados.",
-    author: "Cliente ejemplo",
-    initials: "CE",
+    date: "Evento",
+    body: "Las pantallas y las luces se veían muy bonitas. Chuy fue muy amable y nos puso las canciones que le pedimos.",
+    author: "Ana",
+    initials: "AN",
   },
   {
     rating: 5,
-    date: "Ejemplo",
-    body: "Hicieron nuestra posada navideña y fue un éxito. Las más de 14 luces móviles cambiaron por completo el salón.",
-    author: "Familia ejemplo",
-    initials: "FE",
+    date: "Fiesta",
+    body: "Nos lo recomendó un amigo y sí nos gustó mucho. Traía de todo un poco de música y se armó buen ambiente.",
+    author: "Carlos",
+    initials: "CA",
   },
   {
     rating: 5,
-    date: "Ejemplo",
-    body: "Servicio puntual y profesional en New México. El DJ booth LED para fotos y videos fue el hit de la fiesta.",
-    author: "Clienta ejemplo",
-    initials: "CE",
+    date: "Fiesta",
+    body: "El robot fue un éxito, todos querían una foto con él jaja. Gracias, Chuy, estuvo muy padre la fiesta.",
+    author: "Patricia",
+    initials: "PA",
   },
 ];
+
+// ── Equipo profesional ──────────────────────────────────────────────
+// Categorías de equipo que tiene DJ Chuy. Ajusta marcas/modelos si cambian.
+export type EquipmentCategory = {
+  icon: "audio" | "luces" | "video" | "efectos";
+  title: string;
+  items: { name: string; note: string }[];
+};
+
+export const EQUIPMENT: EquipmentCategory[] = [
+  {
+    icon: "audio",
+    title: "Audio profesional",
+    items: [
+      { name: "Micrófonos Shure", note: "Inalámbricos para voz, brindis y maestro de ceremonia." },
+      { name: "Bocinas RCF", note: "Sonido profesional con cobertura para todo el salón." },
+      { name: "Consola y mezcla", note: "Mezcla en vivo, clara y a buen volumen toda la noche." },
+    ],
+  },
+  {
+    icon: "luces",
+    title: "Iluminación",
+    items: [
+      { name: "Luces móviles Beam 14R mini", note: "Haces de luz que se mueven al ritmo de la música." },
+      { name: "+14 luces móviles", note: "Transforman por completo el ambiente del salón." },
+      { name: "Torres y washes de color", note: "Iluminación de ambiente para pista y escenario." },
+    ],
+  },
+  {
+    icon: "video",
+    title: "Pantallas y video",
+    items: [
+      { name: "Pantallas LED", note: "Para tu entrada, montajes y video en vivo." },
+      { name: "DJ booth LED", note: "Cabina iluminada, ideal para fotos y videos." },
+    ],
+  },
+  {
+    icon: "efectos",
+    title: "Efectos especiales",
+    items: [
+      { name: "Chispas frías", note: "Entradas y primer baile de impacto, sin riesgo." },
+      { name: "Baile en las nubes", note: "El efecto de humo bajo para el primer baile." },
+      { name: "Robot LED gigante", note: "El show para la entrada o la hora loca." },
+    ],
+  },
+];
+
+// ── Redes sociales ──────────────────────────────────────────────────
+// TODO: reemplaza los href "#" con los enlaces reales de cada red.
+export type SocialLink = {
+  platform: "instagram" | "facebook" | "tiktok";
+  label: string;
+  handle: string;
+  href: string;
+};
+
+export const SOCIAL_LINKS: SocialLink[] = [
+  { platform: "instagram", label: "Instagram", handle: "@djchuy", href: "#" },
+  { platform: "facebook", label: "Facebook", handle: "DJ Chuy", href: "#" },
+  { platform: "tiktok", label: "TikTok", handle: "@djchuy", href: "#" },
+];
+
+// ── Métodos de pago ─────────────────────────────────────────────────
+export const PAYMENT_CARDS: string[] = ["Visa", "Mastercard", "Amex", "Discover"];
 
 export type Faq = { q: string; a: string };
 

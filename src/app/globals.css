@@ -176,6 +176,26 @@
   -webkit-box-decoration-break: clone;
 }
 
+/* Crisp scroll-reveal — opacity + translate only, never blur */
+.dna-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dna-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dna-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Scrolling marquee */
 @keyframes dna-marquee {
   from {

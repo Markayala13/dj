@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone } from "lucide-react";
 import { Container } from "./ui";
+import { SocialIcons } from "./Socials";
+import { PaymentBadge } from "./Payments";
 import { FOOTER_LINKS, BRAND, PHONE_DISPLAY, PHONE_HREF } from "./data";
 
 export function Footer() {
@@ -36,6 +38,11 @@ export function Footer() {
             </Link>
           ))}
         </nav>
+
+        <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
+          <SocialIcons variant="light" />
+          <PaymentBadge variant="light" />
+        </div>
 
         <p className="mt-10 max-w-5xl text-sm leading-relaxed text-white/45">
           Producción de eventos para quinceañeras, bodas, eventos privados y posadas

@@ -7,6 +7,10 @@ import { Faq } from "@/components/sites/dna/Faq";
 import { VideoReels } from "@/components/sites/dna/VideoReels";
 import { VideoKick } from "@/components/sites/dna/VideoKick";
 import { ReviewsCarousel } from "@/components/sites/dna/ReviewsCarousel";
+import { Equipo } from "@/components/sites/dna/Equipo";
+import { Socials } from "@/components/sites/dna/Socials";
+import { PaymentBadge } from "@/components/sites/dna/Payments";
+import { Reveal } from "@/components/sites/dna/Reveal";
 import { Footer } from "@/components/sites/dna/Footer";
 import { Container, Eyebrow, PillButton } from "@/components/sites/dna/ui";
 import {
@@ -47,7 +51,7 @@ export default function Home() {
       {/* Eventos */}
       <section id="eventos" className="scroll-mt-20 bg-white py-24 md:py-32">
         <Container className="grid gap-14 lg:grid-cols-2 lg:gap-20">
-          <div>
+          <Reveal>
             <Eyebrow>Para cada ocasión</Eyebrow>
             <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
               Eventos que se recuerdan.
@@ -67,8 +71,9 @@ export default function Home() {
                 {CTA_PRIMARY}
               </PillButton>
             </div>
-          </div>
+          </Reveal>
 
+          <Reveal delay={120}>
           <ul className="lg:pt-10">
             {EVENT_TYPES.map((item, i) => (
               <li
@@ -85,13 +90,14 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          </Reveal>
         </Container>
       </section>
 
       {/* Conoce a DJ Chuy */}
       <section className="bg-white pb-24 md:pb-32">
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="order-2 overflow-hidden rounded-2xl lg:order-1">
+          <Reveal className="order-2 overflow-hidden rounded-2xl lg:order-1">
             <Image
               src="/sites/dna/djchuy-portrait.jpg"
               alt="DJ Chuy"
@@ -100,8 +106,8 @@ export default function Home() {
               sizes="(max-width: 1024px) 100vw, 560px"
               className="h-auto w-full object-cover"
             />
-          </div>
-          <div className="order-1 lg:order-2">
+          </Reveal>
+          <Reveal className="order-1 lg:order-2" delay={120}>
             <Eyebrow>Tu DJ</Eyebrow>
             <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
               Conoce a <span className="dna-mark">DJ Chuy.</span>
@@ -121,7 +127,7 @@ export default function Home() {
                 {CTA_PRIMARY}
               </PillButton>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
@@ -138,48 +144,57 @@ export default function Home() {
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/60 to-black/45" />
         <Container className="relative flex min-h-[460px] flex-col justify-end py-20 md:min-h-[580px]">
-          <Eyebrow className="text-white/70">La fiesta</Eyebrow>
-          <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
-            Nadie
-            <br />
-            <span className="text-[#BFEC34]">se queda sentado.</span>
-          </h2>
+          <Reveal>
+            <Eyebrow className="text-white/70">La fiesta</Eyebrow>
+            <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
+              Nadie
+              <br />
+              <span className="text-[#BFEC34]">se queda sentado.</span>
+            </h2>
+          </Reveal>
         </Container>
       </section>
+
+      {/* Equipo profesional */}
+      <Equipo />
 
       {/* Servicios / Ofrecemos */}
       <section id="servicios" className="scroll-mt-20 bg-black py-24 text-white md:py-32">
         <Container>
-          <Eyebrow>Lo que incluimos</Eyebrow>
-          <h2 className="dna-display mt-5 max-w-3xl text-white text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Todo para tu evento.
-          </h2>
+          <Reveal>
+            <Eyebrow>Lo que incluimos</Eyebrow>
+            <h2 className="dna-display mt-5 max-w-3xl text-white text-[clamp(2.25rem,5.5vw,4.25rem)]">
+              Todo para tu evento.
+            </h2>
+          </Reveal>
 
-          <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
+          <Reveal delay={120} className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
             <IncludeColumn label="Producción" items={OFRECEMOS_A} />
             <IncludeColumn label="Efectos y más" items={OFRECEMOS_B} />
-          </div>
+          </Reveal>
 
-          <div className="mt-12 flex flex-wrap gap-4">
+          <Reveal delay={200} className="mt-12 flex flex-wrap gap-4">
             <PillButton href={CTA_HREF} variant="white" external>
               {CTA_PRIMARY}
             </PillButton>
             <PillButton href={EVENTS_HREF} variant="outlineDark">
               Ver eventos
             </PillButton>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
       {/* Explora */}
       <section className="bg-white py-24 md:py-32">
         <Container>
-          <Eyebrow>Explora</Eyebrow>
-          <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Arma tu fiesta.
-          </h2>
+          <Reveal>
+            <Eyebrow>Explora</Eyebrow>
+            <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
+              Arma tu fiesta.
+            </h2>
+          </Reveal>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <Reveal delay={120} className="mt-12 grid gap-8 md:grid-cols-3">
             {EXPLORA_CARDS.map((card) => (
               <a
                 key={card.title}
@@ -209,76 +224,92 @@ export default function Home() {
                 </span>
               </a>
             ))}
-          </div>
+          </Reveal>
 
           {/* Reels en acción */}
-          <div className="mt-16">
+          <Reveal className="mt-16">
             <p className="dna-eyebrow">Míralo en acción</p>
             <h3 className="dna-display mt-3 text-[#111] text-[clamp(1.6rem,3.2vw,2.5rem)]">
               Así se ven nuestros <span className="dna-mark">eventos.</span>
             </h3>
             <VideoReels />
-          </div>
+          </Reveal>
         </Container>
       </section>
 
       {/* Reseñas (placeholder) */}
       <section id="resenas" className="scroll-mt-20 bg-white pb-24 md:pb-32">
         <Container>
-          <Eyebrow>Lo que dicen · ejemplos</Eyebrow>
-          <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Nuestros clientes lo cuentan mejor.
-          </h2>
+          <Reveal>
+            <Eyebrow>Lo que dicen</Eyebrow>
+            <h2 className="dna-display mt-5 text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
+              Nuestros clientes lo cuentan mejor.
+            </h2>
+          </Reveal>
 
-          <ReviewsCarousel />
+          <Reveal delay={120}>
+            <ReviewsCarousel />
+          </Reveal>
         </Container>
       </section>
 
       {/* Inversión (placeholder) */}
       <section className="bg-black py-24 text-white md:py-32">
         <Container className="max-w-[760px]">
-          <Eyebrow>Una idea de inversión</Eyebrow>
-          <h2 className="dna-display mt-5 text-white text-[clamp(2.5rem,6vw,4.5rem)]">
-            Paquetes <span className="text-[#BFEC34]">a tu medida.</span>
-          </h2>
-          <p className="mt-7 text-lg leading-relaxed text-[#d6d6d9]">
-            Cada evento es diferente. Armamos un paquete según tu fecha, tus horas y los
-            efectos que elijas — pantallas LED, DJ booth, chispas frías, baile en las
-            nubes, luces móviles y maestro de ceremonia.
-          </p>
-          <p className="mt-5 text-lg leading-relaxed text-[#d6d6d9]">
-            Escríbenos con los detalles y te pasamos una cotización el mismo día, sin
-            costos escondidos.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <PillButton href={CTA_HREF} variant="white" withArrow external>
-              {CTA_PRIMARY}
-            </PillButton>
-            <PillButton href={SERVICES_HREF} variant="outlineDark">
-              Ver servicios
-            </PillButton>
-          </div>
+          <Reveal>
+            <Eyebrow>Una idea de inversión</Eyebrow>
+            <h2 className="dna-display mt-5 text-white text-[clamp(2.5rem,6vw,4.5rem)]">
+              Paquetes <span className="text-[#BFEC34]">a tu medida.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="mt-7 text-lg leading-relaxed text-[#d6d6d9]">
+              Cada evento es diferente. Armamos un paquete según tu fecha, tus horas y los
+              efectos que elijas — pantallas LED, DJ booth, chispas frías, baile en las
+              nubes, luces móviles y maestro de ceremonia.
+            </p>
+            <p className="mt-5 text-lg leading-relaxed text-[#d6d6d9]">
+              Escríbenos con los detalles y te pasamos una cotización el mismo día, sin
+              costos escondidos.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <PillButton href={CTA_HREF} variant="white" withArrow external>
+                {CTA_PRIMARY}
+              </PillButton>
+              <PillButton href={SERVICES_HREF} variant="outlineDark">
+                Ver servicios
+              </PillButton>
+            </div>
+            <PaymentBadge variant="light" className="mt-8" />
+          </Reveal>
         </Container>
       </section>
 
       {/* FAQ */}
       <section className="bg-white py-24 md:py-32">
         <Container>
-          <Eyebrow>Antes de preguntar</Eyebrow>
-          <h2 className="dna-display mt-5 max-w-3xl text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
-            Preguntas frecuentes.
-          </h2>
-          <Faq />
-          <a
-            href={CTA_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 inline-block border-b-2 border-[#BFEC34] pb-1 text-sm font-bold text-[#111]"
-          >
-            ¿Otra pregunta? Escríbenos
-          </a>
+          <Reveal>
+            <Eyebrow>Antes de preguntar</Eyebrow>
+            <h2 className="dna-display mt-5 max-w-3xl text-[#111] text-[clamp(2.25rem,5.5vw,4.25rem)]">
+              Preguntas frecuentes.
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <Faq />
+            <a
+              href={CTA_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-block border-b-2 border-[#BFEC34] pb-1 text-sm font-bold text-[#111]"
+            >
+              ¿Otra pregunta? Escríbenos
+            </a>
+          </Reveal>
         </Container>
       </section>
+
+      {/* Redes sociales */}
+      <Socials />
 
       {/* Contacto / CTA final */}
       <section id="contacto" className="relative isolate scroll-mt-20 overflow-hidden bg-black">
@@ -291,15 +322,17 @@ export default function Home() {
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
         <Container className="relative flex min-h-[500px] flex-col justify-center py-24 md:min-h-[600px]">
-          <Eyebrow className="text-white/70">Aparta tu fecha</Eyebrow>
-          <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
-            Hagamos de tu
-            <br />
-            evento algo
-            <br />
-            <span className="text-[#BFEC34]">inolvidable.</span>
-          </h2>
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <Reveal>
+            <Eyebrow className="text-white/70">Aparta tu fecha</Eyebrow>
+            <h2 className="dna-display mt-4 text-white text-[clamp(2.5rem,7vw,5rem)]">
+              Hagamos de tu
+              <br />
+              evento algo
+              <br />
+              <span className="text-[#BFEC34]">inolvidable.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={120} className="mt-9 flex flex-wrap items-center gap-4">
             <PillButton href={CTA_HREF} variant="white" withArrow external>
               {CTA_PRIMARY}
             </PillButton>
@@ -309,7 +342,7 @@ export default function Home() {
             >
               Llama al {PHONE_DISPLAY}
             </a>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
